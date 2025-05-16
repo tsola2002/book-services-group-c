@@ -1,4 +1,4 @@
-package com.tsola2002.bookservice;
+package com.example.mofe.bookservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
