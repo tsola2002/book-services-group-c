@@ -1,14 +1,20 @@
-FROM ubuntu:latest AS build
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
-WORKDIR /app
-COPY . .
-RUN chmod +x gradlew
-RUN ./gradlew bootjar --no-daemon
+# Stage 1: Build with Gradle and JDK 17
+FROM gradle:8.13-jdk17 AS build
 
-#RUN STAGE
+USER gradle
+WORKDIR /home/gradle/project
+
+COPY --chown=gradle:gradle . .
+
+RUN gradle clean bootJar --no-daemon
+
+# Stage 2: Minimal runtime image
 FROM eclipse-temurin:17
+
 WORKDIR /app
-EXPOSE 8080
-COPY --from=build /app/build/libs/appjar-1.jar app.jar
+
+EXPOSE 8000
+
+COPY --from=build /home/gradle/project/build/libs/*.jar app.jar
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
