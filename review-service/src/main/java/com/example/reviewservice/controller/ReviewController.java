@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
-// @CrossOrigin(origins = "https://review-service-428s.onrender.com/reviews")  // Replace with your allowed origin
-@CrossOrigin(origins = "*") 
-
+@CrossOrigin(origins = "*")  // Replace with your allowed origin
 @RestController
 @RequestMapping("/reviews")
 public class ReviewController {
