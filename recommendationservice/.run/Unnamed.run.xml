@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <envs>
+      <env name="DB_URL" value="jdbc:postgresql://pg-recommendention-recommendationservice.l.aivencloud.com:19863/defaultdb?sslmode=require" />
+      <env name="DB_USER" value="avnadmin" />
+      <env name="DB_PASSWORD" value="AVNS_txamr2DHdIkf-i-3U3Q" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.tsola2002.recommendationservice.RecommendationserviceApplication" />
+    <module name="recommendationservice" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
