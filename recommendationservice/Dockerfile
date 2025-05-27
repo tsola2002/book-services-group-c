@@ -13,7 +13,7 @@ FROM eclipse-temurin:17
 
 WORKDIR /app
 
-EXPOSE 8000
+EXPOSE 7003
 
 COPY --from=build /home/gradle/project/build/libs/*.jar app.jar
 
