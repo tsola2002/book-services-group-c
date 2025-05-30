@@ -26,6 +26,11 @@ public class ReviewController {
     public List<Review> getReviewsByBookId(@PathVariable String bookId) {
         return service.getReviewsByBookId(bookId);
     }
+    @GetMapping("/{id}")
+public Review getReviewById(@PathVariable String id) {
+    return service.getReviewById(id);
+}
+
 
     @DeleteMapping("/{id}")
     public void deleteReview(@PathVariable String id) {
