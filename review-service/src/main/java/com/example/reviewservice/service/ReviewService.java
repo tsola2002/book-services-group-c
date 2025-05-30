@@ -23,6 +23,15 @@ public class ReviewService {
         return repository.findByBookId(bookId);
     }
 
+    public Review updateReview(String id, Review updatedReview) {
+    Review existing = repository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Review not found"));
+    existing.setReviewer(updatedReview.getReviewer());
+    existing.setContent(updatedReview.getContent());
+    return repository.save(existing);
+}
+
+
     public void deleteReview(String id) {
         repository.deleteById(id);
     }
