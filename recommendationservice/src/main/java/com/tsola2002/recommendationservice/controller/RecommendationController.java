@@ -9,8 +9,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/bookrecommendations")
-// @CrossOrigin(origins = "http://localhost:7003")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:7003")
+// @CrossOrigin(origins = "*")
 public class RecommendationController {
 
 
